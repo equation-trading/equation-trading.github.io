@@ -38,10 +38,10 @@ namespace ModelService
         {
             object[,] retval = new object[8, 2];
             retval[0, 0] = "ModelService_Version"; retval[0, 1] = "Version Information";
-            retval[1, 0] = "CopulaService_GaussianCalibration"; retval[1, 1] = "Calibrate Calibration Copula";
+            retval[1, 0] = "CopulaService_GaussianCalibration"; retval[1, 1] = "Calibrate Gaussian Copula";
             retval[2, 0] = "CopulaService_StudentCalibration"; retval[2, 1] = "Calibrate Student Copula";
             retval[3, 0] = "CopulaService_ArchimedeanCalibration"; retval[3, 1] = "Calibrate Archimedean Copula";
-            retval[4, 0] = "CopulaService_GaussianSimulation"; retval[4, 1] = "Simulate Calibration Copula";
+            retval[4, 0] = "CopulaService_GaussianSimulation"; retval[4, 1] = "Simulate Gaussian Copula";
             retval[5, 0] = "CopulaService_StudentSimulation"; retval[5, 1] = "Simulate Student Copula";
             retval[6, 0] = "CopulaService_ArchimedeanSimulation"; retval[6, 1] = "Simulate Archimedean Copula";
             retval[7, 0] = "SmoothingService_KernelSmoothing"; retval[7, 1] = "Smooth Discrete Data using Kernel Functions";
@@ -134,6 +134,10 @@ namespace ModelService
                     else if (i == 0 && j == 1)
                     {
                         retval[i, j] = degreeOfFreedom;
+                    }
+                    else if (i == 1 && j == 0)
+                    {
+                        retval[i, j] = "Correlation";
                     }
                     else if (i == 0 || j == 0)
                     {

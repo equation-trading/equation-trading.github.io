@@ -12,6 +12,52 @@ title: Copula
 		<p class="xll"><a href="CopulaService.zip">An Add-in is created to use the toolset in Excel can be found here.</a></p>
 		<p class="src"><a href="ModelService.cs">The C# code to generate the Excel add-in can be found here.</a></p>
 		<p class="xlsx"><a href="CopulaUnitTest.xlsx">A sample test sheet can be found below.</a></p>
-		<p class="functions">Below is a list of function inputs and outputs.</p>
+		<p class="functions">Below is a list of function inputs and outputs.
+		<h4>SmoothingService_KernelSmoothing</h4>Return smoothed distribution of given sample data and kernel function.
+		<table border="1"><tr><th>Input</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>FuctionType</td><td>string</td><td>Sepecify function type of the kernel smoothing, either cdf or icdf.</tr>
+		<tr><td>KernelType</td><td>string</td><td>Sepecify kernel function name, can be normal/box/triangle/quadratic.</tr>
+		<tr><td>Eval</td><td>array of double</td><td>Sepecify an array of evaluation points of the distribution.</tr>
+		<tr><td>Data</td><td>array of double</td><td>Sepecify an array of discrete sample data.</tr></table>
+		<table border="1"><tr><th>Output</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>SmoothReport</td><td>two column</td><td>a column of evaluation points and a column of smoothed distribution/inverse distribution.</tr></table>
+		<h4>CopulaService_GaussianCalibration</h4>Return calibration report of Gaussian copula.
+		<table border="1"><tr><th>Input</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>Data</td><td>2D array</td><td>Sepecify n-by-d sample data where n is sample size and d is dimension</tr></table>
+		<table border="1"><tr><th>Output</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>CalibrationReport</td><td>table</td><td>a table of Gaussian copula correlation.</tr></table>
+		<h4>CopulaService_StudentCalibraton</h4>Return calibration report of student-t copula.
+		<table border="1"><tr><th>Input</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>Data</td><td>2D array</td><td>Sepecify n-by-d sample data where n is sample size and d is dimension</tr></table>
+		<table border="1"><tr><th>Output</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>CalibrationReport</td><td>table</td><td>a table of student-t copula degree of freedom and correlation.<tr></table>
+		<h4>CopulaService_ArchimedeanCalibration</h4>Return calibration report of different Archimedean copulas.
+		<table border="1"><tr><th>Input</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>Type</td><td>string</td><td>Sepecify Archimedean copula type, can be amh/clayton/frank/gumbel/joe.</tr>
+		<tr><td>Data</td><td>2D array</td><td>Sepecify n-by-d sample data where n is sample size and d is dimension</tr></table>
+		<table border="1"><tr><th>Output</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>CalibrationReport</td><td>table</td><td>a table of CopulaType and Archimedean copula theta parameter.</tr></table>
+		<h4>CopulaService_GaussianSimulation</h4>Return simulation of Gaussian copula.
+		<table border="1"><tr><th>Input</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>Correlation</td><td>table</td><td>Sepecify a correlation matrix to define a Gaussian copula.</tr>
+		<tr><td>Size</td><td>int</td><td>Sepecify Gaussian copula simulation sample size.</tr>
+		<table border="1"><tr><th>Output</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>SimulationReport</td><td>table</td><td>a n-by-d simulated Gaussian copula sample data where n is sample size and d is dimension.</tr></table>
+		<h4>CopulaService_StudentSimulation</h4>Return simulation of student-t copula.
+		<table border="1"><tr><th>Input</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>Correlation</td><td>table</td><td>Sepecify a correlation matrix to define a student-t copula.</tr>
+		<tr><td>DegreeOfFreedom</td><td>double</td><td>Sepecify degree of freedom to define a student-t copula.</tr>
+		<tr><td>Size</td><td>int</td><td>Sepecify Gaussian copula simulation sample size.</tr>
+		<table border="1"><tr><th>Output</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>SimulationReport</td><td>table</td><td>a n-by-d simulated stduent-t copula sample data where n is sample size and d is dimension.</tr></table>
+		<h4>CopulaService_ArchimedeanSimulation</h4>Return simulation of Archimedean type copula.
+		<table border="1"><tr><th>Input</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>Type</td><td>table</td><td>Sepecify a Archimedean copula type, can be amh/clayton/frank/gumbel/joe.</tr>
+		<tr><td>Theta</td><td>double</td><td>Sepecify theta parameter to define an Archimedean copula.</tr>
+		<tr><td>Dimension</td><td>int</td><td>Sepecify Archimedean copula simulation dimension.</tr>
+		<tr><td>Size</td><td>int</td><td>Sepecify Archimedean copula simulation sample size.</tr>
+		<table border="1"><tr><th>Output</th><th>Type</th><th>Definition</th></tr>
+		<tr><td>SimulationReport</td><td>table</td><td>a n-by-d simulated Archimedean copula sample data where n is sample size and d is dimension.</tr></table></p>
+		<p class="spec"><a href="Specification.pdf">For more details, a specification can be found here.</a></p>
     </div>
 </section>
