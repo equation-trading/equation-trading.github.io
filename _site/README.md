@@ -1,1 +1,2 @@
-# equation-trading.github.io
+# Run
+`bundle exec jekyll serve -H 0.0.0.0`
