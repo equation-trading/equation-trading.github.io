@@ -10,6 +10,14 @@
     }
   });
 
+  // mermaid
+  $(window).on('load', function () {
+    mermaid.initialize({startOnLoad:true});
+    window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+  });
+
+  // mathjax
+
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
